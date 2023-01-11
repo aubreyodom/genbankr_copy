@@ -392,13 +392,7 @@ readOrigin = function(lines, seqtype = "bp") {
     
     dnachar = gsub(regex, "", lines[-1])
     chars = paste(dnachar, collapse="")
-    if(any(nzchar(dnachar))) {
-        switch(seqtype,
-               bp = DNAString(chars),
-               aa = AAString(chars),
-               stop("Unknown origin sequence type: ", seqtype))
-    } else
-        NULL
+    return(NULL)
 }
 
 
